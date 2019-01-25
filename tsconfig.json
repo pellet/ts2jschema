@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "sourceMap": true,
+      "declaration": false,
+      "module": "commonjs", // https://github.com/TypeStrong/ts-node/issues/313
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "target": "es2016",
+      "typeRoots": [
+        "node_modules/@types"
+      ],
+      "lib": [
+        "es2018",
+        "dom"
+      ],
+      "alwaysStrict": true,
+      "forceConsistentCasingInFileNames": true,
+      "strictNullChecks": true,
+      "allowJs": true
+    }
+  }

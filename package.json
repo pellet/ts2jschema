@@ -1,0 +1,28 @@
+{
+  "name": "@nightlife/ts2jschema",
+  "version": "1.0.0",
+  "description": "yet another typescript to json-schema tool, based on other people's libraries as much as possible",
+  "main": "index.js",
+  "dependencies": {
+    "@types/json-schema": "^7.0.1",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.18",
+    "mocha": "^5.2.0",
+    "ts-simple-ast": "^21.0.0",
+    "typescript": "^3.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renewooller/ts2jschema.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/renewooller/ts2jschema/issues"
+  },
+  "homepage": "https://github.com/renewooller/ts2jschema#readme"
+}
