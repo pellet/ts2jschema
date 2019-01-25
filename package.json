@@ -4,10 +4,18 @@
   "description": "yet another typescript to json-schema tool, based on other people's libraries as much as possible",
   "main": "index.js",
   "dependencies": {
+    "@types/chai": "^4.1.7",
     "@types/json-schema": "^7.0.1",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.18",
+    "ajv": "^6.7.0",
+    "bluebird": "^3.5.3",
+    "chai": "^4.2.0",
+    "lodash": "^4.17.11",
     "mocha": "^5.2.0",
+    "sinon": "^7.2.3",
+    "sinon-chai": "^3.3.0",
+    "ts-node": "^8.0.1",
     "ts-simple-ast": "^21.0.0",
     "typescript": "^3.2.4"
   },
