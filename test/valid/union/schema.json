@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "allOf": [
+        {
+            "$ref": "#/definitions/union"
+        }
+    ],
+    "definitions": {
+        "union" : {
+            "anyOf" : [
+                {
+                    "$ref": "#/definitions/A"
+                },
+                {
+                    "$ref": "#/definitions/B"
+                }
+            ]
+        },
+        "A": {
+            "additionalProperties": false,
+            "properties": {
+                "AString": {
+                    "type" : "string"
+                },
+                "nameParam": {
+                    "enum" : ["A"],
+                    "type" : "string"
+                }
+            },
+            "required": [
+                "AString",
+                "nameParam"
+            ],
+            "type": "object"
+        },
+        "B": {
+            "additionalProperties": false,
+            "properties": {
+                "BNumber": {
+                    "type" : "number"
+                },
+                "nameParam": {
+                    "enum" : ["B"],
+                    "type" : "string"
+                }
+            },
+            "required": [
+                "BNumber",
+                "nameParam"
+            ],
+            "type": "object"
+        }
+    }
+}

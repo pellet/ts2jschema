@@ -22,25 +22,42 @@ let ts2jschema = new Ts2JSchema({})
 
 let ajv = new Ajv()
 
+function testSchema(tsFile, testName) {
+
+    const schema = ts2jschema.convertFile(tsFile, testName)
+    expect(schema).to.deep.equals(require(`./valid/${testName}/schema.json`))  
+    
+    const validate = ajv.compile(schema)
+
+    const testData = require(`./valid/${testName}/type`)
+    
+    testData.valid.forEach((toCheck) => {
+        validate(toCheck)
+        expect(validate.errors).to.be.null
+    })
+
+    testData.invalid.forEach((toCheck) => {
+        validate(toCheck)
+        expect(validate.errors).to.exist  
+    }) 
+
+    if(validate.errors)  
+        expect(validate.errors.length).to.be.gt(0)
+}
+
+function testSchemaValidPath(testName) {
+    testSchema(`./test/valid/${testName}/type.ts`, testName)
+}
 
 describe("schema tests", () => {
 
-    it("should generate simple schema", (done) => {
-        let schema = ts2jschema.convertFile(  "./test/valid/simple/type.ts", "simple")
-        expect(schema).to.deep.equals(require("./valid/simple/schema.json"))  
-        
-        let validate = ajv.compile(schema)
-        validate(valid_simple.valid)
-        
-        expect(validate.errors).to.be.null
+    it("simple", (done) => {
+        testSchemaValidPath("simple")
+        done()
+    })
 
-        validate(valid_simple.invalid)
-        
-        expect(validate.errors).to.exist  
-
-        if(validate.errors)  
-            expect(validate.errors.length).to.be.gt(0)
-
+    it("union", (done) => {
+        testSchemaValidPath("union")
         done()
     })
 })

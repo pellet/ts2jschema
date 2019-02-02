@@ -4,10 +4,10 @@ export interface simple {
 }
 
 
-export const valid : simple = {
+export const valid : simple[] = [{
     StringParam : "astring"
-}
+}]
 
-export const invalid = {
+export const invalid = [{
     StringParam : 1
-}
+}]
