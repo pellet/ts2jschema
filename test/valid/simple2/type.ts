@@ -1,10 +1,10 @@
 
-export interface simple {
+export interface simple2 {
     StringParam : string
 }
 
 
-export const valid : simple[] = [{
+export const valid : simple2[] = [{
     StringParam : "astring"
 }]
 

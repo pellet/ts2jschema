@@ -2,11 +2,11 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "allOf": [
         {
-            "$ref": "#/definitions/simple"
+            "$ref": "#/definitions/simple2"
         }
     ],
     "definitions": {
-        "simple": {
+        "simple2": {
             "additionalProperties": false,
             "properties": {
                 "StringParam": {
