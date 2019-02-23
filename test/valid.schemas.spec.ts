@@ -60,6 +60,11 @@ describe("schema tests", () => {
         testSchemaValidPath("union")
         done()
     })
+
+    it("simple2", (done) => {
+        testSchemaValidPath("simple2")
+        done()
+    })
 })
 
 
